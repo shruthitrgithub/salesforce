@@ -20,16 +20,16 @@ public class BasePage {
 	protected Log4JUtility logObject=Log4JUtility.getInstance();
 	protected Logger log;
 	protected ExtentReportsUtility report=ExtentReportsUtility.getInstance();
-	
+
 	public BasePage(WebDriver driver) {
 		BasePage.driver=driver;
 		System.out.println("driver in basePage="+driver);
 		PageFactory.initElements(driver, this);
 		log=logObject.getLogger();	
 	}
-	
-	
-	
+
+
+
 	//public static void enterText (WebElement element,String data,String objectName) {
 	public static void enterText (WebElement element,String data) {		
 		if (element.isDisplayed()) {
@@ -57,9 +57,9 @@ public class BasePage {
 	public static void clickElement(WebElement element, long timeOut) {	
 		WebDriverWait wait = new WebDriverWait (driver, timeOut);
 		wait.until(ExpectedConditions.elementToBeClickable(element));
-		
+
 		if (element.isDisplayed()) {
-			element.click();;
+			element.click();
 		}
 		else {
 			System.out.println("Fail: Element is not found");
@@ -79,7 +79,7 @@ public class BasePage {
 
 	public static String getTextOfElement(WebElement element) {
 		return element.getText();
-		
+
 	}
 
 	public static void selectFromDropDown(WebElement dropdown, String value) {	
@@ -89,5 +89,18 @@ public class BasePage {
 		drpDn.selectByVisibleText(value);
 
 	}
-	
+
+
+	public static void switchToWindow(String title) {
+/*		for (String handle : driver.getWindowHandles()) {
+			if (driver.switchTo().window(handle).getTitle().contains(title)) {
+				System.out.println("Switched to window with title:" + title);
+				break;
+			}
+
+		}
+*/	
+		driver.switchTo().window(title);
+	}
+
 }

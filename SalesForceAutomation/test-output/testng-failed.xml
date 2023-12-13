@@ -5,10 +5,10 @@
     <classes>
       <class name="com.automation.tests.AutomationScripts">
         <methods>
-          <include name="TestId_TC10"/>
           <include name="setUpForBeforeTest"/>
-          <include name="tearDownAfterTestMethod"/>
+          <include name="TestId_TC36"/>
           <include name="setUpBeforeTestMethod"/>
+          <include name="tearDownAfterTestMethod"/>
         </methods>
       </class> <!-- com.automation.tests.AutomationScripts -->
     </classes>
