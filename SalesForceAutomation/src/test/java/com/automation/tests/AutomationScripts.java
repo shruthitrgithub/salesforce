@@ -944,7 +944,7 @@ public class AutomationScripts extends BaseTest{
 		homepage.StartDateTime_time();
 		homepage.input_EndTime();
 		homepage.click_save_Button();
-		//driver.close();
+		driver.close();
 	
 	}
 	
