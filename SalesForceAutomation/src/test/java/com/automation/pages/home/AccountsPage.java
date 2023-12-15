@@ -33,8 +33,7 @@ public class AccountsPage extends BasePage{
 	@FindBy(id ="ext-gen154") WebElement toCalender;
 	@FindBy(id ="ext-gen281") WebElement fromTodayButton;	
 	@FindBy(id ="ext-gen296") WebElement toTodayButton;
-	@FindBy(id ="ext-gen49") WebElement saveButton_UnsavedReport;
-	
+	@FindBy(id ="ext-gen49") WebElement saveButton_UnsavedReport;	
 	@FindBy(id ="saveReportDlg_reportNameField") WebElement reportName;
 	@FindBy(id ="saveReportDlg_DeveloperName") WebElement reportUniqueName;
 	@FindBy(id ="ext-gen314") WebElement saveButton_SaveReport;

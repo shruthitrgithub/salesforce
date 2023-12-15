@@ -46,12 +46,19 @@ public class HomePage extends BasePage{
 	@FindBy(xpath ="//*[@id=\"p:f:j_id25:j_id61:28:j_id64\"]/a") WebElement EightPM;
 	@FindBy(className="comboboxIcon") WebElement SubjectCombo;
 	@FindBy(xpath ="//a[text()='Other']") WebElement comboBox_Other;
-
+	@FindBy(xpath ="//*[@id=\"p:f:j_id25:j_id61:20:j_id64\"]/a") WebElement FourPM;
 	@FindBy(id ="EndDateTime_time") WebElement endDateTime_Time;
 	@FindBy(id ="timePickerItem_42") WebElement StartDateTime_Time_9pm;
 	@FindBy(id ="StartDateTime_time") WebElement StartDateTime_time;
 	@FindBy(className="btn") WebElement SaveButton;
 	@FindBy(id ="timePickerItem_46") WebElement endDateTime_Time_11pm;
+	@FindBy(xpath ="//*[@id=\"timePickerItem_38\"]") WebElement endDateTime_Time_7pm;
+	@FindBy(id ="IsRecurrence") WebElement CheckBox;
+	@FindBy(id ="rectypeftw") WebElement WeekelyRadioButton;
+	@FindBy(id ="RecurrenceEndDateOnly") WebElement RecurrenceEndDate;
+	@FindBy(id ="datePicker") WebElement Calender;
+	@FindBy(xpath ="//*[@id=\"bottomButtonRow\"]/input[1]") WebElement Save;
+	
 	public HomePage(WebDriver driver) {
 		super(driver);
 	}
@@ -185,7 +192,7 @@ public class HomePage extends BasePage{
 	public void click_CurrentDate() {
 		clickElement(CurrentDate, timeOut);
 	}
-	public void Scroll() {
+	public void Scroll8PM() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,1000)");
 	}
@@ -229,11 +236,46 @@ public class HomePage extends BasePage{
 		clickElement(endDateTime_Time_11pm, timeOut);	
 
 	}
+	public void input_EndTime7() {		
+		clickElement(endDateTime_Time, timeOut);
+		clickElement(endDateTime_Time_7pm, timeOut);	
+	}
 	
+
 
 	public void click_Save() {
 		clickElement(SaveButton,timeOut);
 	}
+	public void click_FourPM() {
+		clickElement(FourPM, timeOut);
+	}
+	public void Scroll4PM() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,800)");
+	}
+	public void ScrollRecurrence() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,800)");
+	}
+	public void click_CheckBox() {
+		clickElement(CheckBox, timeOut);
+	
+}
+	public void click_WeekelyRadioButton() {
+		clickElement(WeekelyRadioButton, timeOut);	
+	}
+	public void click_RecurrenceEndDate() {
+		clickElement( RecurrenceEndDate, timeOut);	
+}
+	public void DatePicker() {
+		clickElement(Calender, timeOut);
+		
+	}
+	public void Save() {
+		clickElement(Save, timeOut);
+		
+	}
+	
 }
 
 

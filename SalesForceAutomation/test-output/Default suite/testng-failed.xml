@@ -6,9 +6,9 @@
       <class name="com.automation.tests.AutomationScripts">
         <methods>
           <include name="setUpForBeforeTest"/>
-          <include name="TestId_TC36"/>
           <include name="setUpBeforeTestMethod"/>
           <include name="tearDownAfterTestMethod"/>
+          <include name="TestId_TC37"/>
         </methods>
       </class> <!-- com.automation.tests.AutomationScripts -->
     </classes>

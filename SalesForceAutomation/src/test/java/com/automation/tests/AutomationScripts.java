@@ -270,8 +270,9 @@ public class AutomationScripts extends BaseTest{
 		loginpage.enterUsername(userId);
 		loginpage.enterPassword(password);
 		loginpage.clickButton();
-
+  
 		homepage.click_userMenuDropDown();	
+        Thread.sleep(4000);
 		homepage.click_developerconsole();		
 		//	driver.switchTo().window("Developer Console");			
 		driver.close();		
@@ -937,16 +938,52 @@ public class AutomationScripts extends BaseTest{
 		homepage.click_Home_Tab();
 		Thread.sleep(4000);
 		homepage.click_CurrentDate();
-		homepage.Scroll();
+		homepage.Scroll8PM();
 		homepage.click_EightPM();
 		homepage.click_SubjectCombo();
 		homepage.comboBox_SelectOthers();
 		homepage.StartDateTime_time();
 		homepage.input_EndTime();
 		homepage.click_save_Button();
-		driver.close();
+		//driver.close();
 	
 	}
+	@Test(enabled = true)
+	public void TestId_TC37() throws InterruptedException {
+
+		log.info("inside the TestId_TC36 test method");		
+		PropertiesUtility pro=new PropertiesUtility();
+		Properties appProp= pro.loadFile("applicationDataProperties");	
+		String userId=appProp.getProperty("login.valid.userid");
+		String password=appProp.getProperty("login.valid.password");
+
+		LoginPage loginpage = new LoginPage(driver);
+		//Thread.sleep(2000);
+		HomePage homepage = new HomePage(driver);
+
+		loginpage.enterUsername(userId);
+		loginpage.enterPassword(password);
+		loginpage.clickButton();
+		homepage.click_Home_Tab();
+		Thread.sleep(2000);
+		homepage.click_CurrentDate();
+		homepage.Scroll4PM();
+		Thread.sleep(4000);
+		homepage.click_FourPM();
+		homepage.click_SubjectCombo();
+		homepage.comboBox_SelectOthers();
+		Thread.sleep(4000);
+		homepage.input_EndTime7();
+		homepage.ScrollRecurrence();
+		homepage.click_CheckBox();
+		homepage.click_RecurrenceEndDate();
+		homepage.DatePicker();
+		homepage.Save();
+		
 	
+		//homepage.click_save_Button();
+	
+	
+	}
 	
 }
